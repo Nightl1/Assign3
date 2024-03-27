@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ccv7m6gpxnq3b"
+path="res://.godot/imported/7- Eilen.mp3-a0a0f4dc850b10c9b0d612d59a0b5198.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Pack/7- Eilen.mp3"
+dest_files=["res://.godot/imported/7- Eilen.mp3-a0a0f4dc850b10c9b0d612d59a0b5198.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

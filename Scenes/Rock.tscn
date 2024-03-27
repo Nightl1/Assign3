@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://duspdfvhunq52"]
+
+[ext_resource type="Texture2D" uid="uid://cyvwd3qgbx76l" path="res://Assets/fuel_PNG51.png" id="1_tcabb"]
+[ext_resource type="Script" path="res://Scenes/Fuel.gd" id="1_xxeyx"]
+[ext_resource type="Texture2D" uid="uid://8scjgd4spy4i" path="res://Assets/Pixel Adventure 1/Free/Items/Fruits/Collected.png" id="3_gr16l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbl3l"]
+atlas = ExtResource("3_gr16l")
+region = Rect2(0, 0, 11, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acqys"]
+atlas = ExtResource("3_gr16l")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkn08"]
+atlas = ExtResource("3_gr16l")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbkrw"]
+atlas = ExtResource("3_gr16l")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iumvv"]
+atlas = ExtResource("3_gr16l")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2adhi"]
+atlas = ExtResource("3_gr16l")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qqjd"]
+atlas = ExtResource("3_gr16l")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d78ex"]
+atlas = ExtResource("3_gr16l")
+region = Rect2(0, 0, 11, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vjpx6"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Fuel",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbl3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acqys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkn08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbkrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iumvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2adhi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qqjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d78ex")
+}],
+"loop": false,
+"name": &"pickedUP",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhytc"]
+size = Vector2(110, 145.5)
+
+[node name="Rock" type="Area2D"]
+script = ExtResource("1_xxeyx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(33, 40.9441)
+scale = Vector2(0.0693582, 0.0642133)
+texture = ExtResource("1_tcabb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(36, 39)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_vjpx6")
+animation = &"pickedUP"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(39, 40)
+shape = SubResource("RectangleShape2D_hhytc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

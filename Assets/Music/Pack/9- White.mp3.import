@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dukd02pt4eh32"
+path="res://.godot/imported/9- White.mp3-f26deebcd635679e292d9ef18de34a9d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Pack/9- White.mp3"
+dest_files=["res://.godot/imported/9- White.mp3-f26deebcd635679e292d9ef18de34a9d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

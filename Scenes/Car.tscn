@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5hlx6gn673ev"]
+
+[ext_resource type="Script" path="res://Scenes/CharacterBody2D.gd" id="1_yv1vu"]
+[ext_resource type="Texture2D" uid="uid://doie5q33784hh" path="res://Assets/Particles/Particles/_Rain&Snow/_Rain&&Snow/_Rain&Snow/resources/Sprites/rain1.png" id="2_k3tsi"]
+[ext_resource type="Texture2D" uid="uid://88nk0yvihe6" path="res://Assets/car.png" id="4_mjv7p"]
+[ext_resource type="AudioStream" uid="uid://oxhkblkuf5bb" path="res://Assets/Music/Pack/1- Midnight Dreams.mp3" id="5_pqobw"]
+[ext_resource type="Texture2D" uid="uid://bi61tb4kucdfo" path="res://Assets/Particles/Particles/Complex/smoke/smoke2_1.png" id="6_qacoh"]
+[ext_resource type="Texture2D" uid="uid://cvqfa1ebfpcvy" path="res://Assets/Texture/light_source.tres" id="7_ob0gt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmwsh"]
+size = Vector2(514, 236)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(85, 357)
+script = ExtResource("1_yv1vu")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(6, -811)
+amount = 10000
+lifetime = 10.0
+texture = ExtResource("2_k3tsi")
+emission_shape = 3
+emission_rect_extents = Vector2(2000, 1)
+gravity = Vector2(0, 5000)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(117, 84)
+shape = SubResource("RectangleShape2D_hmwsh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(122.25, 81.5)
+scale = Vector2(1.84896, 1.84896)
+texture = ExtResource("4_mjv7p")
+flip_h = true
+
+[node name="Background" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_pqobw")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(420, -312)
+zoom = Vector2(0.5, 0.65)
+
+[node name="Exhaust" type="CPUParticles2D" parent="."]
+position = Vector2(-120, 134)
+amount = 3
+texture = ExtResource("6_qacoh")
+emission_shape = 5
+emission_points = PackedVector2Array()
+emission_normals = PackedVector2Array()
+emission_colors = PackedColorArray()
+gravity = Vector2(-200, -180)
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+anim_speed_min = 24.46
+anim_speed_max = 24.46
+anim_offset_max = 0.4978
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(611, 114)
+scale = Vector2(2.25838, 0.922036)
+energy = 3.0
+texture = ExtResource("7_ob0gt")
+offset = Vector2(0, 10)
+texture_scale = 4.85

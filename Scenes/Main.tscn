@@ -1,0 +1,188 @@
+[gd_scene load_steps=16 format=3 uid="uid://dclv3ytwigv2c"]
+
+[ext_resource type="Texture2D" uid="uid://d36b3oefw4jxb" path="res://Assets/Free-Horizontal-Game-Backgrounds/PNG/game_background_3/layers/sky.png" id="1_1mc81"]
+[ext_resource type="Script" path="res://Scenes/DayAndNight.gd" id="1_lmi3h"]
+[ext_resource type="Texture2D" uid="uid://cxkejsuh451v3" path="res://Assets/Free-Horizontal-Game-Backgrounds/PNG/game_background_3/layers/clouds_1.png" id="2_0hpn2"]
+[ext_resource type="Texture2D" uid="uid://d2x2mk7a5njtl" path="res://Assets/Texture/daynightcycle-gradient-texture.tres" id="2_8sey2"]
+[ext_resource type="Texture2D" uid="uid://crwbkbb4mi1lw" path="res://Assets/Free-Horizontal-Game-Backgrounds/PNG/game_background_3/layers/clouds_2.png" id="3_ghclk"]
+[ext_resource type="Texture2D" uid="uid://ba5v078ecjvx4" path="res://Assets/Free-Horizontal-Game-Backgrounds/PNG/game_background_3/layers/rocks.png" id="4_nny5a"]
+[ext_resource type="Script" path="res://Scenes/FuelAudio.gd" id="4_sxu7j"]
+[ext_resource type="Texture2D" uid="uid://cfpu1fo208vj1" path="res://Assets/Free-Horizontal-Game-Backgrounds/PNG/game_background_3/layers/ground_1.png" id="5_lns45"]
+[ext_resource type="AudioStream" uid="uid://ba6cp54551df3" path="res://Assets/Music/mixkit-arcade-game-complete-or-approved-mission-205.wav" id="5_su2xj"]
+[ext_resource type="Texture2D" uid="uid://hp4tmwhcri3b" path="res://Assets/Free-Horizontal-Game-Backgrounds/PNG/game_background_3/layers/ground_2.png" id="6_khbwk"]
+[ext_resource type="Texture2D" uid="uid://r5wrcd3133dt" path="res://Assets/Free-Horizontal-Game-Backgrounds/PNG/game_background_3/layers/ground_3.png" id="7_plav4"]
+[ext_resource type="Texture2D" uid="uid://dlpqf4o57qfjb" path="res://Assets/Free-Horizontal-Game-Backgrounds/PNG/game_background_3/layers/plant.png" id="8_b71ad"]
+[ext_resource type="PackedScene" uid="uid://b5hlx6gn673ev" path="res://Scenes/Car.tscn" id="9_1me5f"]
+[ext_resource type="PackedScene" uid="uid://duspdfvhunq52" path="res://Scenes/Rock.tscn" id="16_su1g6"]
+[ext_resource type="Script" path="res://Scenes/Score.gd" id="17_4j1r8"]
+
+[node name="Main" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("9_1me5f")]
+
+[node name="Score" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("17_4j1r8")
+
+[node name="Collible" type="Node" parent="."]
+
+[node name="Rock" parent="Collible" instance=ExtResource("16_su1g6")]
+position = Vector2(2095, 444)
+
+[node name="Rock2" parent="Collible" instance=ExtResource("16_su1g6")]
+position = Vector2(4615, 460)
+
+[node name="Rock3" parent="Collible" instance=ExtResource("16_su1g6")]
+position = Vector2(8116, 479)
+
+[node name="Rock4" parent="Collible" instance=ExtResource("16_su1g6")]
+position = Vector2(10937, 460)
+
+[node name="Rock5" parent="Collible" instance=ExtResource("16_su1g6")]
+position = Vector2(13401, 463)
+
+[node name="Rock6" parent="Collible" instance=ExtResource("16_su1g6")]
+position = Vector2(15278, 470)
+
+[node name="Rock7" parent="Collible" instance=ExtResource("16_su1g6")]
+position = Vector2(16523, 463)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="UI"]
+offset_left = 17.0
+offset_top = 15.0
+offset_right = 205.0
+offset_bottom = 86.0
+
+[node name="Label" type="Label" parent="UI/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Fuel: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FuelAudio" type="Node" parent="."]
+script = ExtResource("4_sxu7j")
+
+[node name="FuelAudio" type="AudioStreamPlayer2D" parent="FuelAudio"]
+position = Vector2(2136, 487)
+stream = ExtResource("5_su2xj")
+
+[node name="FuelAudio2" type="AudioStreamPlayer2D" parent="FuelAudio"]
+position = Vector2(4659, 500)
+
+[node name="FuelAudio3" type="AudioStreamPlayer2D" parent="FuelAudio"]
+position = Vector2(8157, 561)
+
+[node name="FuelAudio4" type="AudioStreamPlayer2D" parent="FuelAudio"]
+position = Vector2(10976, 507)
+
+[node name="FuelAudio5" type="AudioStreamPlayer2D" parent="FuelAudio"]
+position = Vector2(13445, 494)
+
+[node name="FuelAudio6" type="AudioStreamPlayer2D" parent="FuelAudio"]
+position = Vector2(15322, 521)
+
+[node name="FuelAudio7" type="AudioStreamPlayer2D" parent="FuelAudio"]
+position = Vector2(16573, 501)
+
+[node name="Parallax" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Parallax"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax/ParallaxBackground"]
+position = Vector2(0, 105)
+motion_scale = Vector2(0.14, 0.14)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sky" type="Sprite2D" parent="Parallax/ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+texture = ExtResource("1_1mc81")
+region_enabled = true
+region_rect = Rect2(0, 0, 19200, 1080)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Parallax/ParallaxBackground"]
+position = Vector2(0, 105)
+motion_scale = Vector2(0.28, 0.28)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Cloud" type="Sprite2D" parent="Parallax/ParallaxBackground/ParallaxLayer2"]
+texture_repeat = 2
+texture = ExtResource("2_0hpn2")
+region_enabled = true
+region_rect = Rect2(0, 0, 19200, 1080)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Parallax/ParallaxBackground"]
+position = Vector2(0, 105)
+motion_scale = Vector2(0.42, 0.42)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Cloud2" type="Sprite2D" parent="Parallax/ParallaxBackground/ParallaxLayer3"]
+texture_repeat = 2
+texture = ExtResource("3_ghclk")
+region_enabled = true
+region_rect = Rect2(0, 0, 19200, 1080)
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Parallax/ParallaxBackground"]
+position = Vector2(0, 105)
+motion_scale = Vector2(0.56, 0.56)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Rocks" type="Sprite2D" parent="Parallax/ParallaxBackground/ParallaxLayer4"]
+texture_repeat = 2
+texture = ExtResource("4_nny5a")
+region_enabled = true
+region_rect = Rect2(0, 0, 19200, 1080)
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="Parallax/ParallaxBackground"]
+position = Vector2(0, 105)
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Ground" type="Sprite2D" parent="Parallax/ParallaxBackground/ParallaxLayer5"]
+texture_repeat = 2
+texture = ExtResource("5_lns45")
+region_enabled = true
+region_rect = Rect2(0, 0, 19200, 1080)
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="Parallax/ParallaxBackground"]
+position = Vector2(0, 105)
+motion_scale = Vector2(0.84, 0.84)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Ground2" type="Sprite2D" parent="Parallax/ParallaxBackground/ParallaxLayer6"]
+texture_repeat = 2
+texture = ExtResource("6_khbwk")
+region_enabled = true
+region_rect = Rect2(0, 0, 19200, 1080)
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="Parallax/ParallaxBackground"]
+position = Vector2(0, 105)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Ground3" type="Sprite2D" parent="Parallax/ParallaxBackground/ParallaxLayer7"]
+texture_repeat = 2
+texture = ExtResource("7_plav4")
+region_enabled = true
+region_rect = Rect2(0, 0, 19200, 1080)
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="Parallax/ParallaxBackground"]
+position = Vector2(0, 105)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Plant" type="Sprite2D" parent="Parallax/ParallaxBackground/ParallaxLayer8"]
+texture_repeat = 2
+texture = ExtResource("8_b71ad")
+region_enabled = true
+region_rect = Rect2(0, 0, 19200, 1080)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+script = ExtResource("1_lmi3h")
+gradiant = ExtResource("2_8sey2")

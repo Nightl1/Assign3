@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bt2r7h65tcjff"
+path="res://.godot/imported/2- Mental Vortex.ogg-12828a0fb682875b8b856e2bf521c3eb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Music/Pack/2- Mental Vortex.ogg"
+dest_files=["res://.godot/imported/2- Mental Vortex.ogg-12828a0fb682875b8b856e2bf521c3eb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

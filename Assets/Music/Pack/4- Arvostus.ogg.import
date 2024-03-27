@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dsgi30q80w06t"
+path="res://.godot/imported/4- Arvostus.ogg-b11cac2b27c57836fb50e85db45fd2cf.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Music/Pack/4- Arvostus.ogg"
+dest_files=["res://.godot/imported/4- Arvostus.ogg-b11cac2b27c57836fb50e85db45fd2cf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

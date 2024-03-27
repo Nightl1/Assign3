@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://qoo01iaty2uf"
+path="res://.godot/imported/9- White.ogg-41c3dedcda3e1968fa23e20dc131959f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Music/Pack/9- White.ogg"
+dest_files=["res://.godot/imported/9- White.ogg-41c3dedcda3e1968fa23e20dc131959f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
